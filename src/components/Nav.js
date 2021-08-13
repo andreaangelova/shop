@@ -17,9 +17,11 @@ const Nav = () => {
         <li>
           <Link to="/shop">Shop</Link>
         </li>
-        <li>
-          <Link to="/card">Card</Link>
-        </li>
+        {loggedIn && (
+          <li>
+            <Link to="/card">Card</Link>
+          </li>
+        )}
         <li>
           {loggedIn ? (
             <Button onClick={logOunt}>Logout</Button>
