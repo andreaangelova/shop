@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [submitted, setSubmitted] = useState(false);
   const submit = (e) => {
     e.preventDefault();
     if (formData.email && formData.password) {
+      dispatch({ type: "LOGIN" });
       history.push("/");
     }
     setSubmitted(true);

@@ -1,6 +1,13 @@
+import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const loggedIn = useSelector((store) => store.loggedIn);
+  const dispatch = useDispatch();
+  const logOunt = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <div className="nav">
       <span>
@@ -14,7 +21,11 @@ const Nav = () => {
           <Link to="/card">Card</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          {loggedIn ? (
+            <Button onClick={logOunt}>Logout</Button>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </li>
       </ul>
     </div>
