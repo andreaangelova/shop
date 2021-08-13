@@ -1,4 +1,4 @@
-const initialState = { loggedIn: true, selectedItems: [] };
+const initialState = { loggedIn: false, selectedItems: [] };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {

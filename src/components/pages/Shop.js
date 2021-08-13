@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button, Card, Col, Row, Alert } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import CardItems from "../shared/CardItems";
 import shoppingItems from "../shared/shoppingItems";
 
 const Shop = () => {
@@ -38,27 +39,7 @@ const Shop = () => {
       </Alert>
       <div className={showAlert ? "blur" : ""}>
         <h1>This is shop page</h1>
-        <Row xs={1} md={4} className="g-4 margin-left10">
-          {shoppingItems.map((item) => {
-            return (
-              <Col key={item.id}>
-                <Card className="card" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={require(`./../../images/image${item.id}.jpeg`).default}
-                  />
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>{item.description}</Card.Text>
-                    <Button variant="primary" onClick={() => addItem(item.id)}>
-                      Add to card
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
+        <CardItems items={shoppingItems} addItem={addItem} />
       </div>
     </div>
   );
