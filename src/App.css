@@ -28,6 +28,11 @@
   text-align: right;
   margin-right: 10%;
 }
+
+.card {
+  color: #282c34;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

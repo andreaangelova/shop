@@ -1,11 +1,21 @@
+import { Link } from "react-router-dom";
+
 const Nav = () => {
   return (
     <div className="nav">
-      <span>Logo</span>
+      <span>
+        <Link to="/">Logo</Link>
+      </span>
       <ul>
-        <li>Shop</li>
-        <li>Card</li>
-        <li>Login</li>
+        <li>
+          <Link to="/shop">Shop</Link>
+        </li>
+        <li>
+          <Link to="/card">Card</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
     </div>
   );
