@@ -17,7 +17,11 @@ const CardItems = ({ items, addItem }) => {
                 </Card.Title>
                 <Card.Text>{item.description}</Card.Text>
                 {addItem && (
-                  <Button variant="primary" onClick={() => addItem(item.id)}>
+                  <Button
+                    className="add-item"
+                    variant="primary"
+                    onClick={() => addItem(item.id)}
+                  >
                     Add to card
                   </Button>
                 )}
