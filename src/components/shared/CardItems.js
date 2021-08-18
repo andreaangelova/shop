@@ -12,11 +12,15 @@ const CardItems = ({ items, addItem }) => {
                 src={require(`./../../images/image${item.id}.jpeg`).default}
               />
               <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
+                <Card.Title>
+                  {item.title} {item.quantity && `x ${item.quantity}`}
+                </Card.Title>
                 <Card.Text>{item.description}</Card.Text>
-                <Button variant="primary" onClick={() => addItem(item.id)}>
-                  Add to card
-                </Button>
+                {addItem && (
+                  <Button variant="primary" onClick={() => addItem(item.id)}>
+                    Add to card
+                  </Button>
+                )}
               </Card.Body>
             </Card>
           </Col>
