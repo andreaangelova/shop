@@ -1,4 +1,4 @@
-const initialState = { loggedIn: false, selectedItems: [] };
+const initialState = { loggedIn: true, selectedItems: [] };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,6 +20,27 @@ const appReducer = (state = initialState, action) => {
         ...state,
         selectedItems: previousItems,
       };
+    case "REMOVE_ITEM":
+      const newItems = state.selectedItems.filter(
+        (item) => item.id !== action.payload
+      );
+      return { ...state, selectedItems: newItems };
+    case "ADD_MORE_ITEMS":
+      let selectedItems = state.selectedItems.map((item) => {
+        if (item.id === action.payload) {
+          item.quantity = ++item.quantity;
+        }
+        return item;
+      });
+      return { ...state, selectedItems };
+    case "ADD_LESS_ITEMS":
+      const selectedLessItems = state.selectedItems.map((item) => {
+        if (item.id === action.payload) {
+          item.quantity = --item.quantity;
+        }
+        return item;
+      });
+      return { ...state, selectedItems: selectedLessItems };
     default:
       return state;
   }
