@@ -37,8 +37,7 @@ const Shop = () => {
           </Button>
         </div>
       </Alert>
-      <div className={showAlert ? "blur" : ""}>
-        <h1>This is shop page</h1>
+      <div className={showAlert ? "blur mt-5" : "mt-5"}>
         <CardItems items={shoppingItems} addItem={addItem} />
       </div>
     </div>

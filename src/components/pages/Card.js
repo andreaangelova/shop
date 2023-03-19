@@ -16,18 +16,6 @@ const Card = () => {
     console.log(selected);
     return selected;
   };
-
-  const getItemsBySelectedItems = () => {
-    const selected = selectedItems.map((item) => {
-      const selectedItem = shoppingItems.find((x) => x.id === item.id);
-      item.title = selectedItem.title;
-      item.description = selectedItem.description;
-      item.gender = selectedItem.gender;
-      return item;
-    });
-    console.log(selected);
-    return selected;
-  };
   const removeItem = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };

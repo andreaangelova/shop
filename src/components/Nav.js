@@ -11,22 +11,22 @@ const Nav = () => {
   return (
     <div className="nav">
       <span>
-        <Link to="/">Logo</Link>
+        <Link className="align-middle" to="/">Logo</Link>
       </span>
       <ul>
         <li>
-          <Link to="/shop">Shop</Link>
+          <Link className="align-middle" to="/shop">Shop</Link>
         </li>
         {loggedIn && (
           <li>
-            <Link to="/card">Card</Link>
+            <Link  className="align-middle" to="/card">Card</Link>
           </li>
         )}
         <li>
           {loggedIn ? (
-            <Button onClick={logOunt}>Logout</Button>
+            <Button  className="align-middle" onClick={logOunt}>Logout</Button>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link  className="align-middle" to="/login">Login</Link>
           )}
         </li>
       </ul>
